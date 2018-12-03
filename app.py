@@ -14,7 +14,7 @@ app = dash.Dash(__name__)
 server = app.server
 
 Data = pd.read_csv('nama_10_gdp_1_Data.csv', na_values=':',usecols=["TIME","GEO","UNIT","NA_ITEM","Value"])
-df=Data.rename({'TIME':'Year','GEO':'Country Name', 'UNIT':'Unit', 'NA_ITEM':'Indicator Name'}, axis='columns').copy()
+df=Data.rename({'TIME':'Year','GEO':'Country Name', 'UNIT':'Unit', 'NA_ITEM':'Indicator Name'}).copy()
 
 df = df[~df['Country Name'].isin(['European Union (current composition)','European Union (without United Kingdom)','European Union (15 countries)','Euro area (EA11-2000, EA12-2006, EA13-2007, EA15-2008, EA16-2010, EA17-2013, EA18-2014, EA19)','Euro area (19 countries)','Euro area (12 countries)'])]
 df = df[~df['Unit'].isin(['Chain linked volumes, index 2010=100','Chain linked volumes (2010), million euro'])]
