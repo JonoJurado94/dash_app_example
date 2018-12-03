@@ -88,7 +88,7 @@ app.layout = html.Div([
             style={'width': '48%', 'float': 'right', 'display': 'inline-block'})
     ]),
 
-    dcc.Graph(id='indicator-graphic')
+    dcc.Graph(id='indicator-graphic2')
 ])
 #Graph1
 @app.callback(
@@ -130,7 +130,7 @@ def update_graph(xaxis_column_name, yaxis_column_name,
     }
 #Graph2
 @app.callback(
-    dash.dependencies.Output('indicator-graphic', 'figure'),
+    dash.dependencies.Output('indicator-graphic2', 'figure'),
     [dash.dependencies.Input('country', 'value'),
      dash.dependencies.Input('yaxis-column', 'value')])
 
