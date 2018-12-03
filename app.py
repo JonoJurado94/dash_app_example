@@ -65,8 +65,8 @@ app.layout = html.Div([
         value=df['Year'].max(),
         step=None,
         marks={str(year): str(year) for year in df['Year'].unique()}
-    )
-])
+    ),
+
    #Part2
     html.Div([
 
@@ -87,8 +87,8 @@ app.layout = html.Div([
             style={'width': '48%', 'float': 'right', 'display': 'inline-block'})
     ]),
 
-    dcc.Graph(id='indicator-graphic')])
-
+    dcc.Graph(id='indicator-graphic')
+])
 #Graph1
 @app.callback(
     dash.dependencies.Output('indicator-graphic', 'figure'),
